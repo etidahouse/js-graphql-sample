@@ -12,6 +12,27 @@ const resolvers = {
         user: (parent, { id }) => {
             return users.find(user => user.id == id)
         }
+    },
+    Mutation: {
+        createUser: (parent, { id, name, email, age }) => {
+            let checkID = users.findIndex(user => user.id == id)
+            if (checkID == -1) {
+                let newUser = { id, name, email, age }
+                users.push(newUser)
+                return newUser
+            } else {
+                throw new Error('ID already exist')
+            }
+        },
+        deleteUser: (parent, { id }) => {
+            let checkID = users.findIndex(user => user.id == id)
+            if (checkID == -1) {
+                users.splice(checkID, 1)
+                return true
+            } else {
+                throw new Error('Unknow ID')
+            }
+        }
     }
 }
 
