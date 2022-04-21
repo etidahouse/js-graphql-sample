@@ -8,4 +8,25 @@ yarn add --dev graphpack
 yarn dev  
 see at http://localhost:4000
 
+## Test
 
+Hello Query :
+`query {
+    hello
+}`
+
+Users Query :
+`query {
+  	users {
+      id
+      name
+    }
+}`
+
+Get an User Query :  
+`query {
+  	user(id: 1) {
+      id
+      name
+    }
+}`
