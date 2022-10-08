@@ -1,8 +1,10 @@
 # Sample GraphQL JS API
 
 ## Install
+```bash
 npm install --global yarn  
 yarn add --dev graphpack
+```
 
 ## Run
 yarn dev  
